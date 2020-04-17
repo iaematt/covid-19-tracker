@@ -14,7 +14,7 @@ Clone ou faça o download [desse repositório](https://github.com/iaematt/covid-
 # Clone o repositório
 $ git clone https://github.com/iaematt/covid-19-tracker
 
-# Acesse a pasta do backend
+# Acesse a pasta
 $ cd covid-19-tracker/
 
 # Instale as dependencias
