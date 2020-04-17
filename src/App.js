@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+
+import { BarChart, Cards, Footer, Header, LineChart } from "./components";
+import GlobalStyle from "./styles/global";
+import { apiZeit } from "./services/api";
 
 function App() {
+  const [covid, setCovid] = useState([]);
+
+  useEffect(() => {
+    async function loadCovid() {
+      const {
+        data: {
+          data: { confirmed, deaths, recovered, updated_at },
+        },
+      } = await apiZeit.get("/api/report/v1/brazil");
+
+      const fetchData = {
+        confirmed,
+        deaths,
+        recovered,
+        lastUpdate: updated_at,
+      };
+
+      setCovid(fetchData);
+    }
+
+    loadCovid();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+
+      <Header />
+
+      <Cards data={covid} />
+      <LineChart />
+      <BarChart />
+
+      <Footer />
+    </>
   );
 }
 

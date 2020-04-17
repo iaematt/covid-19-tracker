@@ -1,14 +1,29 @@
 {
   "name": "covid-19-tracker",
+  "homepage": "https://devbsb.com.br/covid",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Matheus Bastos",
+    "email": "matheusbastos@outlook.com",
+    "url": "https://devbsb.com.br"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
+    "classnames": "^2.2.6",
+    "moment": "^2.24.0",
     "react": "^16.13.1",
+    "react-chartjs-2": "^2.9.0",
+    "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-icons": "^3.9.0",
+    "react-moment": "^0.9.7",
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
