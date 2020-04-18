@@ -1,10 +1,11 @@
-# Covid-19 Tracker 🧪
-
-![](https://devbsb.com.br:5000/files/09f39e9f30452856f481ba0abc06d3fe-covid-19-tracker.png)
+# Rastreador Corona Vírus 🧪
 
 Aplicação desenolvida para rastrear os casos de corona vírus no Brasil. Tecnologias utilizadas neste projeto: _ReactJS, styled-components, axios, chats.js_.
 
-Para visualizar o projeto online 🌍, [acesse aqui](https://devbsb.com.br/covid).
+Para visualizar o projeto 🌍, [acesse aqui](https://devbsb.com.br/covid).
+Código no GitHub, [acesse aqui](https://github.com/iaematt/covid-19-tracker).
+
+![](https://devbsb.com.br:5000/files/c3d09498e657c04681ea935013b0265b-covid-19-tracker.png)
 
 ## Instalações e usos
 
@@ -22,9 +23,20 @@ $ yarn
 
 # Rode a aplicação
 $ yarn start
+
+# Para gerar sua aplicação
+$ yarn build
 ```
 
-O projeto estará rodando na porta **3000**: _localhost:3000_.
+O projeto estará rodando na porta **3000**, acesse: _localhost:3000_.
+
+## APIs
+
+Nesse projeto estou utilizando 2 APIs de dados públicos:
+
+Para dados por estados: [https://covid19-brazil-api.now.sh](https://covid19-brazil-api.now.sh)
+
+Para dados diarios de casos: [https://pomber.github.io/covid19/timeseries.json](https://pomber.github.io/covid19/timeseries.json)
 
 ## Meta
 
