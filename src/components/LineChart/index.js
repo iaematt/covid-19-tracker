@@ -1,33 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Line } from "react-chartjs-2";
-
-import { apiGitHub } from "../../services/api";
 
 import { Container } from "./styles";
 
-function LineChart() {
-  const [daily, setDaily] = useState([]);
-
+function LineChart({ daily }) {
   const date = daily.map(({ date }) => date);
   const confirmed = daily.map(({ confirmed }) => confirmed);
   const deaths = daily.map(({ deaths }) => deaths);
   const recovered = daily.map(({ recovered }) => recovered);
 
-  useEffect(() => {
-    async function loadDaily() {
-      const {
-        data: { Brazil },
-      } = await apiGitHub.get("/covid19/timeseries.json");
-
-      setDaily(Brazil.slice(-20, Brazil.lenght));
-    }
-
-    loadDaily();
-  }, []);
-
   return (
     <Container>
       <Line
+        height={150}
         data={{
           labels: date,
           datasets: [
@@ -36,23 +21,63 @@ function LineChart() {
               label: "Infectados",
               borderColor: "#FFE366",
               fill: true,
+              pointBackgroundColor: "#FFE366",
+              borderWidth: 2,
             },
             {
               data: deaths,
               label: "Mortes",
               borderColor: "#c0392b",
               fill: true,
+              pointBackgroundColor: "#c0392b",
+              borderWidth: 2,
             },
             {
               data: recovered,
               label: "Curados",
               borderColor: "#27ae60",
+              pointBackgroundColor: "#27ae60",
               fill: true,
+              borderWidth: 2,
             },
           ],
         }}
         options={{
-          title: { display: true, text: "Casos acumulados" },
+          title: {
+            display: true,
+            text: "CASOS ACUMULADOS NO BRASIL",
+            fontColor: "#eeeeee",
+            fontSize: 15,
+          },
+          animation: {
+            easing: "linear",
+            duration: 1000,
+          },
+          legend: {
+            labels: {
+              boxWidth: 20,
+              fontColor: "#999999",
+              padding: 10,
+            },
+          },
+          scales: {
+            xAxes: [
+              {
+                gridLines: {
+                  color: "#222222",
+                  zeroLineColor: "#111111",
+                },
+              },
+            ],
+            yAxes: [
+              {
+                gridLines: {
+                  color: "#222222",
+                  zeroLineColor: "#111111",
+                },
+              },
+            ],
+          },
         }}
       />
     </Container>

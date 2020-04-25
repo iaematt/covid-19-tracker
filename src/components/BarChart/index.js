@@ -34,16 +34,19 @@ function BarChart() {
               label: "Mortes",
               data: deaths,
               backgroundColor: "#c0392b",
+              borderColor: "#c0392b",
             },
             {
               label: "Curados",
               data: refuses,
               backgroundColor: "#27ae60",
+              borderColor: "#27ae60",
             },
             {
               label: "Casos",
               data: cases,
               backgroundColor: "#FFE366",
+              borderColor: "#FFE366",
             },
           ],
         }}
@@ -51,19 +54,35 @@ function BarChart() {
           scales: {
             xAxes: [
               {
+                gridLines: {
+                  color: "#222222",
+                  zeroLineColor: "#111111",
+                },
                 stacked: true,
               },
             ],
             yAxes: [
               {
+                gridLines: {
+                  color: "#222222",
+                  zeroLineColor: "#111111",
+                },
                 stacked: true,
               },
             ],
           },
-          legend: { display: false },
+          legend: {
+            labels: {
+              boxWidth: 20,
+              fontColor: "#999999",
+              padding: 10,
+            },
+          },
           title: {
             display: true,
-            text: "Casos de COVID-19 por estado no Brasil",
+            text: "CASOS DE CORONAVÍRUSL POR ESTADOS NO BRASIL",
+            fontColor: "#eeeeee",
+            fontSize: 15,
           },
         }}
       />

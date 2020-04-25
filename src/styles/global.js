@@ -22,6 +22,6 @@ export default createGlobalStyle`
     h5, 
     h6{
         color: #555555;
-        font-weight: 500;
+        font-weight: 700;
     }
 `;

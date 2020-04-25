@@ -4,6 +4,7 @@ export const Nav = styled.header`
   width: 100%;
   height: 50px;
   background-color: #333333;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
 export const Container = styled.div`

@@ -8,6 +8,7 @@ export const Container = styled.div`
   color: #8c8c8c;
   border-radius: 2px;
   font-size: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
   p {
     text-align: center;
